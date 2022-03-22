@@ -1,8 +1,8 @@
 {
-  "homepage": "https://pericci.github.io/to_do_list",
+  "homepage": "https://pericci.github.io/To_do_list/",
   "name": "to_do_list",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
