@@ -1,7 +1,7 @@
 # To do List with React
 A to do list made with react, using localStorage to save tasks and some CSS Modules.
 
-## Technologies
+<!-- ## Technologies
 
 - React
 - Node.js
@@ -44,4 +44,4 @@ Thank you for visiting!
 <img src="assets/thanks.gif" width="130px">
 
 
-<sub>Project created following instructions from React - The Complete Guide course (incl Hooks, React Router, Redux) by Maximilian Schwarzmüller.</sub>
+<sub>Project created following instructions from React - The Complete Guide course (incl Hooks, React Router, Redux) by Maximilian Schwarzmüller.</sub> -->
