@@ -26,8 +26,7 @@ A to do list made with react, using localStorage to save tasks and some CSS Modu
 
 ---
 
-#### How to 
-ch me:
+#### How to reach me:
 
 [![portfolio](assets/portfolio120.png)][1]
 [![linkedin](assets/linkedin.png)][2]
