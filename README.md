@@ -8,7 +8,7 @@ A to do list made with react, using localStorage to save tasks and some CSS Modu
 - HTML 5
 - CSS 3
 
-## See my [Portfolio website](https://PERicci.github.io/)! 😃
+## See my [Portfolio website](https://PERicci.github.io/){:target="\_blank"}! 😃
 
 <img src="assets/wave2.gif" width="30px"> Hello everyone, this is my [portfolio website](https://PERicci.github.io/)!
 
