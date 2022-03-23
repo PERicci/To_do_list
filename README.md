@@ -1,4 +1,5 @@
 # To do List with React
+
 A to do list made with react, using localStorage to save tasks and some CSS Modules.
 
 ## Technologies
@@ -13,7 +14,7 @@ A to do list made with react, using localStorage to save tasks and some CSS Modu
 <img src="assets/wave2.gif" width="30px"> Hello everyone, this is my [portfolio website](https://PERicci.github.io/)!
 
 - :mortar_board: Licentiate degree in Physics
-'
+  '
 - :atom_symbol: Currently studying **React - The Complete Guide (incl Hooks, React Router, Redux) by Maximilian Schwarzmüller**
 
 - :speech_balloon: Proficient in English, Spanish and Portuguese
@@ -41,6 +42,5 @@ A to do list made with react, using localStorage to save tasks and some CSS Modu
 Thank you for visiting!
 
 <img src="assets/thanks.gif" width="130px">
-
 
 <sub>Project created following instructions from React - The Complete Guide course (incl Hooks, React Router, Redux) by Maximilian Schwarzmüller.</sub>

@@ -1,66 +1,59 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-import CourseGoalList from "./components/CourseGoals/CourseGoalList/CourseGoalList";
-import CourseInput from "./components/CourseGoals/CourseInput/CourseInput";
+import ToDoTaskList from "./components/ToDoTasks/ToDoTaskList/ToDoTaskList";
+import ToDoInput from "./components/ToDoTasks/ToDoInput/ToDoInput";
 import "./App.css";
 
 const App = () => {
-  /* const DUMMY_DATA = [
-    { text: "Do all exercises!", id: "g1" },
-    { text: "Finish the course!", id: "g2" },
-  ]; */
+  const [toDoTasks, setToDoTasks] = useState([]);
 
-  const [courseGoals, setCourseGoals] = useState(
-    JSON.parse(localStorage.getItem("goals"))
-  );
+  useEffect(() => {
+    if (localStorage.getItem("tasks") == null) {
+      return
+    } else {
+      setToDoTasks(JSON.parse(localStorage.getItem("tasks")))
+    }
+  }, [])
 
   const updateLocalStorage = (e) => {
-    let goalsStringfied = JSON.stringify(e);
-    localStorage.setItem("goals", goalsStringfied);
-    console.log(goalsStringfied);
+    let tasksStringfied = JSON.stringify(e);
+    localStorage.setItem("tasks", tasksStringfied);
   };
 
-  const addGoalHandler = (enteredText) => {
-    setCourseGoals((prevGoals) => {
-      const updatedGoals = [...prevGoals];
-      updatedGoals.unshift({ text: enteredText, id: Math.random().toString() });
-      updateLocalStorage(updatedGoals);
-      return updatedGoals;
+  const addTaskHandler = (enteredText) => {
+    setToDoTasks((prevTasks) => {
+      const updatedTasks = [...prevTasks];
+      updatedTasks.unshift({ text: enteredText, id: Math.random().toString() });
+      updateLocalStorage(updatedTasks);
+      return updatedTasks;
     });
   };
 
-  const deleteItemHandler = (goalId) => {
-    setCourseGoals((prevGoals) => {
-      const updatedGoals = prevGoals.filter((goal) => goal.id !== goalId);
-      updateLocalStorage(updatedGoals);
-      return updatedGoals;
+  const deleteItemHandler = (taskId) => {
+    setToDoTasks((prevTasks) => {
+      const updatedTasks = prevTasks.filter((task) => task.id !== taskId);
+      updateLocalStorage(updatedTasks);
+      return updatedTasks;
     });
   };
 
   let content = (
-    <p style={{ textAlign: "center" }}>No goals found. Maybe add one?</p>
+    <p style={{ textAlign: "center" }}>No tasks found. Maybe add one?</p>
   );
 
-  if (courseGoals.length > 0) {
+  if (toDoTasks.length > 0) {
     content = (
-      <CourseGoalList items={courseGoals} onDeleteItem={deleteItemHandler} />
+      <ToDoTaskList items={toDoTasks} onDeleteItem={deleteItemHandler} />
     );
   }
 
   return (
     <div>
-      <section id="goal-form">
-        <CourseInput onAddGoal={addGoalHandler} />
+      <section id="task-form">
+        <ToDoInput onAddTask={addTaskHandler} />
       </section>
-      <section id="goals">
+      <section id="tasks">
         {content}
-        {/* {courseGoals.length > 0 && (
-          <CourseGoalList
-            items={courseGoals}
-            onDeleteItem={deleteItemHandler}
-          />
-        ) // <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>
-        } */}
       </section>
     </div>
   );

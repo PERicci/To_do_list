@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // import styled from "styled-components";
 
 import Button from "../../UI/Button/Button";
-import styles from "./CourseInput.module.css";
+import styles from "./ToDoInput.module.css";
 
 /* const FormControl = styled.div`
   margin: 0.5rem 0;
@@ -31,11 +31,11 @@ import styles from "./CourseInput.module.css";
   }
 `; */
 
-const CourseInput = (props) => {
+const ToDoInput = (props) => {
   const [enteredValue, setEnteredValue] = useState("");
   const [isValid, setIsValid] = useState(true);
 
-  const goalInputChangeHandler = (event) => {
+  const taskInputChangeHandler = (event) => {
     if (event.target.value.trim().length > 0) {
       setIsValid(true);
     }
@@ -48,7 +48,7 @@ const CourseInput = (props) => {
       setIsValid(false);
       return;
     }
-    props.onAddGoal(enteredValue);
+    props.onAddTask(enteredValue);
   };
 
   return (
@@ -56,12 +56,12 @@ const CourseInput = (props) => {
       <div
         className={`${styles["form-control"]} ${!isValid && styles.invalid}`}
       >
-        <label>Course Goal</label>
-        <input type="text" onChange={goalInputChangeHandler} />
+        <label>Tasks</label>
+        <input type="text" onChange={taskInputChangeHandler} />
       </div>
-      <Button type="submit">Add Goal</Button>
+      <Button type="submit">Add Task</Button>
     </form>
   );
 };
 
-export default CourseInput;
+export default ToDoInput;
